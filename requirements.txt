@@ -1,0 +1,34 @@
+Django==1.10.5
+Jinja2==2.9.4
+MarkupSafe==0.23
+arrow==0.10.0
+binaryornot==0.4.0
+bumpversion==0.5.3
+chardet==2.3.0
+click==6.7
+cookiecutter==1.5.0
+coverage==4.3.4
+django-appconf==1.0.2
+django-bootstrap-form==3.2.1
+django-bootstrap3==8.1.0
+django-mobile==0.7.0
+django-model-utils==2.6.1
+django-reversion==2.0.8
+django-summernote==0.8.6
+django-tagging==0.4.5
+future==0.16.0
+jinja2-time==0.2.0
+pluggy==0.4.0
+poyo==0.4.0
+py==1.4.32
+python-dateutil==2.6.0
+-e git+git@github.com:stevecassidy/signbank-dictionary.git@e513e1281fd6e8391d1a90a4e6f8ad74076cb94a#egg=signbank_dictionary-origin/master
+-e git+git@github.com:stevecassidy/signbank-feedback.git@bd1673cac1e0c9a7a2cfd959bf054b700de2a7c5#egg=signbank_feedback-origin/master
+signbank-theme-auslan==1.0.0
+-e git+git@github.com:stevecassidy/signbank-video.git@02aa197f61e3480fdac0d1cde5495f86d5168d13#egg=signbank_video-origin/master
+six==1.10.0
+tox==2.5.0
+unicodecsv==0.14.1
+virtualenv==15.1.0
+wheel==0.29.0
+whichcraft==0.4.0
