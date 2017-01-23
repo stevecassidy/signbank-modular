@@ -50,6 +50,4 @@ urlpatterns = [
 
     url(r'^test/(?P<videofile>.*)$', TemplateView.as_view(template_name="test.html")),
 
-    ]
-
-# static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
