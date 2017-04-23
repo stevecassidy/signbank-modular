@@ -1,0 +1,24 @@
+ version: '2'
+ services:
+    db:
+        image: postgres
+    web:
+        build: .
+        #command: sh bin/runindocker.sh
+        command: bash -c "python bin/docker.py collectstatic --noinput && python bin/docker.py migrate && gunicorn signbank.docker_wsgi -b 0.0.0.0:8000"
+        volumes:
+            - .:/code
+        expose:
+            - "8000"
+        depends_on:
+            - db
+    nginx:
+        image: nginx:latest
+        container_name: ng01
+        ports:
+          - "8000:8000"
+        volumes:
+          - .:/code
+          - ./nginx-config.conf:/etc/nginx/conf.d/nginx.conf
+        depends_on:
+          - web
