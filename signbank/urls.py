@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^spell/onehanded.html$', TemplateView.as_view(template_name='fingerspell/fingerspellingonehanded.html')),
     url(r'^numbersigns.html$', numbersigns_view),
 
-    #url(r'^accounts/', include('signbank.registration.urls')),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),

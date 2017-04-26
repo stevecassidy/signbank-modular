@@ -24,3 +24,5 @@ STATIC_ROOT = "/code/signbank_static/"
 SECRET_KEY = '^g=q21r_nnmbz49d!vs*2gvplfsd((02l-y9b@&amp;t3k2r3c$*u&amp;2la5!%s'
 
 ALLOWED_HOSTS = ['web']
+
+FFMPEG_PROGRAM = "/usr/bin/avconv"

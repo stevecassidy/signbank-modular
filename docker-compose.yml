@@ -2,10 +2,13 @@
  services:
     db:
         image: postgres
+        volumes:
+            - .:/code
     web:
         build: .
         #command: sh bin/runindocker.sh
-        command: bash -c "python bin/docker.py collectstatic --noinput && python bin/docker.py migrate && gunicorn signbank.docker_wsgi -b 0.0.0.0:8000"
+        command: bash -c "python bin/docker.py collectstatic --noinput && gunicorn signbank.docker_wsgi -b 0.0.0.0:8000"
+        #&& python bin/docker.py migrate
         volumes:
             - .:/code
         expose:

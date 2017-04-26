@@ -117,6 +117,7 @@ TEMPLATES = [{
 
 # add the Email backend to allow logins using email as username
 AUTHENTICATION_BACKENDS = (
+    "signbank.authbackend.EmailBackend",
     "django.contrib.auth.backends.ModelBackend",
 )
 
@@ -289,9 +290,7 @@ MOBILE_CSS = "bootstrap_css/mobile-extra.css"
 
 # do we allow people to register for the site
 ALLOW_REGISTRATION = True
-
 ACCOUNT_ACTIVATION_DAYS = 7
-
 
 
 # show the number signs page or an under construction page?
