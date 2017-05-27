@@ -311,7 +311,12 @@ FFMPEG_OPTIONS = ["-vcodec", "h264", "-an"]
 # defines the aspect ratio for videos
 VIDEO_ASPECT_RATIO = 3.0/4.0
 
-
+DICTIONARY_FILTER_TAGS = [
+        ('semantic:health', 'Health'),
+        ('semantic:education', 'Education'),
+        ('semantic:sport', 'Sport'),
+        ('semantic:food', 'Food'),
+        ]
 
 # settings for django-tagging
 
