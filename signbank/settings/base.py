@@ -146,6 +146,8 @@ INSTALLED_APPS = (
     'feedback',
     'video',
     'signbank_theme_auslan',
+    # this app
+    'signbank',
 
 #    'signbank.registration',
 
