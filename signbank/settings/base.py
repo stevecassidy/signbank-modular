@@ -93,27 +93,12 @@ TEMPLATES = [{
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.static',
+                # dictionary context processor adds search forms to every template
+                'dictionary.views.dictionary_context_processor',
             ],
         }
     },
     ]
-
-# List of callables that know how to import templates from various sources.
-
-
-
-# TEMPLATE_CONTEXT_PROCESSORS = (
-#     "django.core.context_processors.debug",
-#     "django.core.context_processors.i18n",
-#     "django.core.context_processors.media",
-#     "django.core.context_processors.static",
-#     "django.core.context_processors.tz",
-#     "django.core.context_processors.request",
-#     "django.contrib.auth.context_processors.auth",
-#     "django.contrib.messages.context_processors.messages",
-#     "django_mobile.context_processors.flavour",
-# )
-
 
 # add the Email backend to allow logins using email as username
 AUTHENTICATION_BACKENDS = (
@@ -316,8 +301,53 @@ VIDEO_ASPECT_RATIO = 3.0/4.0
 DICTIONARY_FILTER_TAGS = [
         ('semantic:health', 'Health'),
         ('semantic:education', 'Education'),
-        ('semantic:sport', 'Sport'),
-        ('semantic:food', 'Food'),
+        ('semantic:animal', 'Animal'),
+        ('semantic:arithmetic', 'Arithmetic'),
+        ('semantic:arts', 'Arts'),
+        ('semantic:bodypart', 'Body Part'),
+        ('semantic:car', 'Car'),
+        ('semantic:city', 'City'),
+        ('semantic:clothing', 'Clothing') ,
+        ('semantic:color', 'Color') ,
+        ('semantic:cooking', 'Cooking') ,
+        ('semantic:day', 'Day') ,
+        ('semantic:deaf', 'Deaf') ,
+        ('semantic:drink', 'Drink') ,
+        ('semantic:family', 'Family') ,
+        ('semantic:feel', 'Feel') ,
+        ('semantic:food', 'Food') ,
+        ('semantic:furniture', 'Furniture') ,
+        ('semantic:government', 'Government') ,
+        ('semantic:groom', 'Groom') ,
+        ('semantic:judge', 'Judge') ,
+        ('semantic:language act', 'Language act') ,
+        ('semantic:law', 'Law') ,
+        ('semantic:material', 'Material') ,
+        ('semantic:metalg', 'Metalg') ,
+        ('semantic:mind', 'Mind') ,
+        ('semantic:money', 'Money') ,
+        ('semantic:nature', 'Nature') ,
+        ('semantic:number', 'Number') ,
+        ('semantic:order', 'Order') ,
+        ('semantic:people', 'People') ,
+        ('semantic:physical act', 'Physical act') ,
+        ('semantic:quality', 'Quality') ,
+        ('semantic:quantity', 'Quantity') ,
+        ('semantic:question', 'Question') ,
+        ('semantic:recreation', 'Recreation') ,
+        ('semantic:rooms', 'Rooms') ,
+        ('semantic:salutation', 'Salutation') ,
+        ('semantic:sensing', 'Sensing') ,
+        ('semantic:sexuality', 'Sexuality') ,
+        ('semantic:shapes', 'Shapes') ,
+        ('semantic:shopping', 'Shopping') ,
+        ('semantic:sport', 'Sport') ,
+        ('semantic:telecommunications', 'Telecommunications') ,
+        ('semantic:time', 'Time') ,
+        ('semantic:travel', 'Travel') ,
+        ('semantic:utensil', 'Utensil') ,
+        ('semantic:weather', 'Weather') ,
+        ('semantic:work', 'Work') ,
         ]
 
 # settings for django-tagging
