@@ -224,9 +224,11 @@ SHOW_FREQUENCY = False
 SHOW_TRADITIONAL = True
 
 # which definition fields do we show and in what order?
-DEFINITION_FIELDS = ['general', 'noun', 'verb', 'interact', 'deictic', 'modifier', 'question', 'augment', 'note']
+DEFINITION_FIELDS = ['auslan', 'general', 'noun', 'verb', 'interact', 'deictic', 'modifier', 'question', 'augment', 'note']
 
-DEFINITION_ROLE_CHOICES = (('general', 'General Definition'),
+DEFINITION_ROLE_CHOICES = (
+    ('auslan', 'Definition in Auslan'),
+    ('general', 'General Definition'),
     ('noun', 'As a Noun'),
     ('verb', 'As a Verb or Adjective'),
     ('deictic', 'As a Pointing Sign'),
