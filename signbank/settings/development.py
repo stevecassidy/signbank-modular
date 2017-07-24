@@ -18,7 +18,7 @@ ANON_TAG_SEARCH = True
 ANON_SAFE_SEARCH = True
 
 # show/don't show sign navigation
-SIGN_NAVIGATION = False
+SIGN_NAVIGATION = True
 
 # show the number signs page or an under construction page?
 #SHOW_NUMBERSIGNS = False
