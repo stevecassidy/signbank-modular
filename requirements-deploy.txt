@@ -2,5 +2,6 @@ git+https://github.com/stevecassidy/signbank-dictionary.git@master
 git+https://github.com/stevecassidy/signbank-feedback.git@master
 git+https://github.com/stevecassidy/signbank-theme-auslan.git@master
 git+https://github.com/signbank/Signbank-video.git@master
+git+https://github.com/stevecassidy/signbank-pages
 psycopg2
 gunicorn

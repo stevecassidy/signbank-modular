@@ -76,10 +76,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#    'django_mobile.middleware.MobileDetectionMiddleware',
-#    'django_mobile.middleware.SetFlavourMiddleware',
-#    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'reversion.middleware.RevisionMiddleware',
+    'pages.middleware.PageFallbackMiddleware',
 )
 
 TEMPLATES = [{
@@ -95,6 +93,8 @@ TEMPLATES = [{
                 'django.template.context_processors.static',
                 # dictionary context processor adds search forms to every template
                 'dictionary.views.dictionary_context_processor',
+                'pages.context_processors.menu',
+                'pages.context_processors.configuration',
             ],
         }
     },
@@ -122,7 +122,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.staticfiles',
-    'django.contrib.flatpages',
     'bootstrap3',
     'django_summernote',
 
@@ -131,13 +130,12 @@ INSTALLED_APPS = (
     'feedback',
     'video',
     'signbank_theme_auslan',
+    'pages',
+
     # this app
     'signbank',
 
-#    'signbank.registration',
-
     'reversion',
-#    'django_mobile',
     'tagging',
 )
 

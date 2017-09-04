@@ -4,14 +4,9 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.contrib.auth.views import logout
 
-from dictionary.models import Gloss
-from django.contrib.flatpages import views as flatpageviews
-
 from django.contrib import admin
 admin.autodiscover()
 
-
-#from adminsite import publisher_admin
 
 if settings.SHOW_NUMBERSIGNS:
     numbersigns_view = TemplateView.as_view(template_name='numbersigns/numbersigns.html')
@@ -20,7 +15,7 @@ else:
 
 
 urlpatterns = [
-    url(r'^$', flatpageviews.flatpage, {'url': '/'}, name='root_page'),
+    #url(r'^$', flatpageviews.flatpage, {'url': '/'}, name='root_page'),
 
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
     url(r'^feedback/', include('feedback.urls', namespace='feedback')),
@@ -46,7 +41,6 @@ urlpatterns = [
 
     url(r'^summernote/', include('django_summernote.urls')),
 
-    url(r'^(?P<url>.*/)$', flatpageviews.flatpage),
 
     url(r'^test/(?P<videofile>.*)$', TemplateView.as_view(template_name="test.html")),
 
