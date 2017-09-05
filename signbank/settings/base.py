@@ -102,8 +102,8 @@ TEMPLATES = [{
 
 # add the Email backend to allow logins using email as username
 AUTHENTICATION_BACKENDS = (
-    "signbank.authbackend.EmailBackend",
     "django.contrib.auth.backends.ModelBackend",
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)
@@ -137,6 +137,11 @@ INSTALLED_APPS = (
 
     'reversion',
     'tagging',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
 )
 
 # A sample logging configuration. The only tangible logging
@@ -173,6 +178,12 @@ LOGGING = {
 DO_LOGGING = False
 LOG_FILENAME = "debug.log"
 
+## Authentication settings
+
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_SIGNUP_FORM_CLASS = 'signbank.models.RegistrationForm'
 
 ## Application settings for signbank
 
