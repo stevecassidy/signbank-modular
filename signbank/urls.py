@@ -3,9 +3,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.contrib.auth.views import logout
-
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import GenericSitemap
+
+from pages.models import Page
+
 admin.autodiscover()
+
+
+sitemap_dict = {
+    'queryset':  Page.objects.all(),
+}
 
 
 if settings.SHOW_NUMBERSIGNS:
@@ -21,10 +30,8 @@ urlpatterns = [
     url(r'^feedback/', include('feedback.urls', namespace='feedback')),
     url(r'^video/', include('video.urls', namespace='video')),
 
-    #(r'^register.html', 'signbank.views.index'),
     url(r'^logout.html', logout,
                         {'next_page': "/"}, "logout"),
-
 
     url(r'^spell/twohanded.html$', TemplateView.as_view(template_name='fingerspell/fingerspellingtwohanded.html')),
     url(r'^spell/practice.html$', TemplateView.as_view(template_name='fingerspell/fingerspellingpractice.html')),
@@ -38,9 +45,10 @@ urlpatterns = [
     # special admin sub site
 #    url(r'^publisher/', include(publisher_admin.urls)),
 
-
     url(r'^summernote/', include('django_summernote.urls')),
 
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': {'pages': GenericSitemap(sitemap_dict, priority=0.6)}},
+        name='cached-sitemap'),
 
     url(r'^test/(?P<videofile>.*)$', TemplateView.as_view(template_name="test.html")),
 
