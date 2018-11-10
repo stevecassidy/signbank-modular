@@ -259,6 +259,11 @@ ADMIN_RESULT_FIELDS = ['sn', 'idgloss', 'annotation_idgloss', 'morph']
 UPLOAD_ROOT = MEDIA_ROOT + "upload/"
 UPLOAD_URL = MEDIA_URL + "upload/"
 
+SUMMERNOTE_CONFIG = {
+    'attachment_filesize_limit': 1024 * 1024 * 100
+}
+
+
 # Location for comment videos relative to MEDIA_ROOT
 COMMENT_VIDEO_LOCATION = "comments"
 # Location for videos associated with pages
