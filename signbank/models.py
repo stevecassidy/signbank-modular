@@ -140,21 +140,21 @@ class RegistrationForm(forms.Form):
 
     yob = BirthYearField(label=t("What year were you born?"))
 
-    australian = forms.ChoiceField(yesnoChoices, label=t("Do you live in ${country}?"))
+    australian = forms.ChoiceField(choices=yesnoChoices, label=t("Do you live in ${country}?"))
 
     postcode = forms.CharField(label=t("If you live in $country, what is your postcode?"),
                                max_length=20, required=False)
 
-    background = forms.MultipleChoiceField(backgroundChoices, label=_("Which of the following best describes you?"))
+    background = forms.MultipleChoiceField(choices=backgroundChoices, label=_("Which of the following best describes you?"))
 
     researcher_credentials = forms.CharField(label=t("(OPTIONAL) If you would like access to advanced SignBank features, e.g. advanced search and detail view of signs, please give evidence of your researcher status here (e.g. link to your university staff profile page, or evidence that you are a research student)."), widget=forms.Textarea, required=False)
 
-    auslan_user = forms.ChoiceField(yesnoChoices, label=t("Do you use $language?"), required=False)
+    auslan_user = forms.ChoiceField(choices=yesnoChoices, label=t("Do you use $language?"), required=False)
 
     learned = forms.ChoiceField(label=t("If you use $language, when did you learn sign language?"),
                                 choices=learnedChoices, required=False)
 
-    deaf = forms.ChoiceField(yesnoChoices, label=t("Are you a deaf person?"))
+    deaf = forms.ChoiceField(choices=yesnoChoices, label=t("Are you a deaf person?"))
 
     schooltype = forms.ChoiceField(label=t("What sort of school do you (or did you) attend?"),
                                    choices=schoolChoices, required=False)
