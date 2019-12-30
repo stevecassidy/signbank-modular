@@ -81,3 +81,5 @@ XALLOWED_TAGS = [ '',
                  'phonology:symmetrical',
                  'phonology:two handed',
                 ]
+
+FFMPEG_PROGRAM = "/usr/local/bin/ffmpeg"
