@@ -108,6 +108,9 @@ AUTHENTICATION_BACKENDS = (
 
 INTERNAL_IPS = ('127.0.0.1',)
 
+# allow embedding pages in iframes if they are from this site
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ROOT_URLCONF = 'signbank.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
