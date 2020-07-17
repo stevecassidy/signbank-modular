@@ -263,7 +263,22 @@ UPLOAD_ROOT = MEDIA_ROOT + "upload/"
 UPLOAD_URL = MEDIA_URL + "upload/"
 
 SUMMERNOTE_CONFIG = {
-    'attachment_filesize_limit': 1024 * 1024 * 100
+    'attachment_filesize_limit': 1024 * 1024 * 100,
+    'summernote': {
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video', 'file']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+            ],
+    },
+    'js': (
+        '/static/js/summernote-file.js',
+    )
 }
 
 

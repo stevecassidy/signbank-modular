@@ -28,6 +28,7 @@ urlpatterns = [
     path('dictionary/', include('dictionary.urls', namespace='dictionary')),
     path('feedback/', include('feedback.urls', namespace='feedback')),
     path('video/', include('video.urls', namespace='video')),
+    path('pages/', include('pages.urls', namespace='pages')),
 
     path('logout.html', auth_views.LogoutView.as_view(),
                         {'next_page': "/"}, "logout"),
