@@ -46,16 +46,15 @@ AUSLAN_STATIC_PREFIX = "/static/"
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-#STATICFILES_DIRS = (
-#        os.path.join(PROJECT_DIR, "media"),
-#)
+STATICFILES_DIRS = (
+)
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -70,6 +69,8 @@ SECRET_KEY = '^g=q21r_nnmbz49d!vs*2gvpll-y9b@&amp;t3k2r3c$*u&amp;2la5!%s'
 
 
 MIDDLEWARE = (
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,6 +80,8 @@ MIDDLEWARE = (
     'reversion.middleware.RevisionMiddleware',
     'pages.middleware.PageFallbackMiddleware',
 )
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [{
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

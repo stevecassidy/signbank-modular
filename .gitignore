@@ -1,3 +1,6 @@
 test-media
 debug.log
 signbank.db 
+env.dev
+env.prod
+bb-videos
