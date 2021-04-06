@@ -18,7 +18,7 @@ tox==3.14.3
 unicodecsv==0.14.1
 virtualenv>=16.0.0
 wheel==0.33.6
-django-registration==3.0
+django-registration==3.1.2
 django-allauth==0.41.0
 natsort==7.0.0
 git+https://github.com/stevecassidy/django-tagging.git@master 
