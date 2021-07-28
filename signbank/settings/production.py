@@ -1,7 +1,7 @@
 from signbank.settings.base import *
 import os
 
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG") == 'True'
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
@@ -15,11 +15,11 @@ DATABASES = {
     }
 }
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY", "secret")
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
 
 PRIMARY_CSS = os.environ.get("PRIMARY_CSS")
 EMAIL_HOST =  os.environ.get("EMAIL_HOST")
@@ -27,6 +27,18 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 SERVER_EMAIL = os.environ.get("SERVER_EMAIL")
+
+
+## django-anymail configuration
+ANYMAIL = {
+    "MAILGUN_API_KEY": os.environ.get("MAILGUN_API_KEY"),
+    "MAILGUN_SENDER_DOMAIN": os.environ.get("MAILGUN_SENDER_DOMAIN")
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+
+
+
+
 
 # Absolute path to the directory that holds media.
 MEDIA_ROOT = os.environ.get("MEDIA_ROOT")
@@ -51,6 +63,6 @@ NUMBER_SIGNS =  os.environ.get("NUMBER_SIGNS") == "True"
 # location of ffmpeg, used to convert uploaded videos
 FFMPEG_PROGRAM = os.environ.get("FFMPEG_PROGRAM")
 FFMPEG_TIMEOUT = os.environ.get("FFMPEG_TIMEOUT")
-FFMPEG_OPTIONS = os.environ.get("FFMPEG_OPTIONS").split(" ")
+FFMPEG_OPTIONS = os.environ.get("FFMPEG_OPTIONS", "").split(" ")
 # Analytics
 GOOGLE_ANALYTICS_TRACKING_CODE = os.environ.get("GOOGLE_ANALYTICS_TRACKING_CODE")
