@@ -4,3 +4,4 @@ signbank.db
 env.dev
 env.prod
 bb-videos
+signbank/staticfiles

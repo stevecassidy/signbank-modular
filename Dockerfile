@@ -12,12 +12,18 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install dependencies
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip 
 COPY ./requirements.txt .
 ADD ./requirements-deploy.txt .
+RUN echo 'hello there'
 RUN pip install -r requirements.txt
 RUN pip install -r requirements-deploy.txt
-
+ 
 # copy project
 COPY . .
+
+ENV STATIC_ROOT=/usr/src/app/signbank/staticfiles
+
+RUN python bin/production.py collectstatic --no-input -v 2
+
 
