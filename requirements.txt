@@ -22,4 +22,5 @@ django-registration==3.0
 django-allauth==0.41.0
 natsort==7.0.0
 git+https://github.com/stevecassidy/django-tagging.git@master 
-whitenoise 
+whitenoise
+django-anymail[mailgun]
